@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Websockets</title>
+</head>
+<body>
+    <div class="container">
+    <div style="margin-top: 10px;" id="welcomeuser" class="alert alert-success" role="alert">
+           Bienvenido     
+    </div>
+    <form id="logout">
+        <input  class="btn btn-warning" type="submit" value="Logout">
+    </form>
+    <div id="contenedor" class="col-sm-8">
+        <h2>Agregar producto</h2>
+        <form id="formProduct">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" name="title" id="titleInput">
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" class="form-control" name="price" id="priceInput">
+            </div>
+            <div class="form-group">
+                <label for="img">URL imagen:</label>
+                <input type="text" class="form-control" name="thumbnail" id="thumbnailInput">
+            </div>
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </form>
+        <br>
+    </div>
+
+    <div id="productos">
+
+    </div>
+    <h1>Mensajes</h1>
+<div>
+    <form id="formMessage">
+        <input id="emailInput" class="form-control" type="email" placeholder="correo electronico" required>
+        <input id="messageInput"  class="form-control" type="text" placeholder="Mensaje" required>
+        <input class="btn btn-warning" type="submit" value="Enviar">
+    </form>
+</div>
+    <div id="messagesPool"></div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./client.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+<h1>Lista de Productos</h1>
+    {{#if products}}         
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{price}}</td>
+            <td><img src="{{thumbnail}}" alt="{{title}}"></td>
+        </tr>
+       
+        {{/each}}
+        </tbody>
+    </table>
+  {{else}}
+    <div>
+        <p>No hay productos</p>
+    </div>
+{{/if}}
